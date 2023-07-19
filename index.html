@@ -12,29 +12,103 @@
             <div class="w-full relative h1ytodwq">
                 <video class="w-full h-full object-cover object-bottom -z-1" autoplay="" loop="" muted="" playsinline="" preload="none" crossorigin="anonymous" x-webkit-airplay="deny" src="src/pexels_videos_3452 (1080p).mp4" disableremoteplayback=""></video>
             </div>
-            <div class="absolute flex flex-col justify-center bottom-12 left-0 right-0 mx-6 md:mx-14 lg:mx-auto has-link-bar tcl920z" style="height: 267.256px;">
+            <div class="absolute flex flex-col justify-center top-0 left-0 right-0 mx-6 md:mx-14 md:bottom-0 md:top-auto lg:mx-auto has-link-bar tcl920z" style="height: 267.256px;">
                 <div class="flex w-full justify-around md:space-x-8 text-white button-container">
                     <div>
                         <h2 class="uppercase heading-xxsmall">Date</h2>
-                        <h3 class="heading-small my-4">Sunday • October . 15 . 2023</h3>
-                        <h2 class="heading-xsmall">4:00 PM</h2>
+                        <h3 class="heading-small my-2 md:my4 md:heading-small">Sunday • October . 15 . 2023</h3>
+                        <h2 class="heading-xsmall md:heading-xsmall">4:00 PM</h2>
                         <a class="uppercase border-b pb-0.25 tracked-medium text-white border-white hover:text-dove hover:border-dove cursor-pointer hidden md:inline-block my-3" href="/cards/category/summer-entertaining-invitations">Add to calendar</a>
                     </div>
                     <div>
                         <h2 class="uppercase heading-xxsmall">Address</h2>
-                        <h3 class="heading-small my-4">Weylin</h3>
-                        <h2 class="heading-xsmall">175 Broadway </br> Brooklyn • New York</h2>
+                        <h3 class="heading-small my-2 md:my4 md:heading-small">Weylin</h3>
+                        <h2 class="heading-xsmall md:heading-xsmall">175 Broadway </br> Brooklyn • New York</h2>
                         <a class="uppercase border-b pb-0.25 tracked-medium text-white border-white hover:text-dove hover:border-dove cursor-pointer hidden md:inline-block my-3" href="https://goo.gl/maps/eXxtxc8xsFEvtjJS9">Get directions</a>
                     </div>
                     <div>
                         <h2 class="uppercase heading-xxsmall">Host</h2>
-                        <h3 class="heading-small my-4">Elana and Daniel Lowy</h3>
-                        <h2 class="heading-xsmall"></h2>
+                        <h3 class="heading-small my-2 md:my4 md:heading-small">Elana and Daniel Lowy</h3>
+                        <h2 class="heading-xsmall md:heading-xsmall"></h2>
                         <a class="uppercase border-b pb-0.25 tracked-medium text-white border-white hover:text-dove hover:border-dove cursor-pointer hidden md:inline-block my-3" href="/cards/category/summer-entertaining-invitations">Send a message</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="max-w-screen-2xl mx-auto overflow-hidden relative text-lapel">
+        <div class="flex box-content justify-center text-center md:px-6 md:pt-6 vlgnzhj h1ytodwq">
+            <h2 class="text-center px-6 pt-10 pb-4 heading-serif-small md:heading-serif-medium lg:heading-serif-large xl:heading-serif-xlarge 2xl:heading-serif-xxlarge">Can you make it?</h2>
+        </div>
+        <div class="flex box-content justify-center text-center md:px-6 md:pt-6 vlgnzhj h1ytodwq">
+            <a class="border uppercase px-6 py-4 tracked-medium text-white bg-lapel border-lapel hover:bg-black cursor-pointer m-4" tag="button" href="/" onclick="openPopup()">Will attend</a>
+            <a class="border uppercase px-6 py-4 tracked-medium text-white bg-lapel border-lapel hover:bg-black cursor-pointer m-4" tag="button" href="/">Will not attend</a>
+        </div>
+    </div>
+    <div id="popup" aria-modal="true" role="dialog" tabindex="-1" aria-label="RSVP Modal" class="popup m1809ice w-full bg-white mx-auto md:mt-16 pt-14 md:mb-4 px-4 pb-12 md:px-16 fixed inset-0" data-reach-dialog-content="" style="max-width: 600px">
+        <div class="flex justify-end absolute w-full px-4 pt-4 top-0 left-0 right-0">
+            <svg class="closer" onclick="closePopup()" height="2rem" viewBox="0 0 24 24" width="2rem" xmlns="http://www.w3.org/2000/svg">
+                <title>Close icon</title>
+                <path d="M4 20L20 4M4 4l16 16" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+        </div>
+        <div class="flex flex-col">
+            <form class="flex flex-col paragraph-xsmall text-lapel" method="POST" action="https://script.google.com/macros/s/AKfycbyfM-3XdAUa2kac25q2pmNoN-ALD9rx2TM7XvOAbtqnfJxYTHiWQnyfyllTBrTJKdarAQ/exec" id="form">
+                <label class="flex items-center justify-center relative h-12 leading-6 pa0c6xm">Full name</label>
+                <input type="text" name="Fullname">
+                <label class="flex items-center justify-center relative h-12 leading-6 pa0c6xm">Total attending (including you)</label>
+                <label class="flex items-center justify-center relative h-12 leading-6 pa0c6xm">Adults</label>
+                <select name="Adults">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                <label class="flex items-center justify-center relative h-12 leading-6 pa0c6xm">Children</label>
+                <select name="Children">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                <label class="flex items-center justify-center relative h-12 leading-6 pa0c6xm">Your private message to the host (optional)</label>
+                <textarea name="Message" rows="5" cols="33"></textarea>
+                <input type="submit" value="Confirm" class="border uppercase px-6 py-4 tracked-medium text-white bg-lapel border-lapel hover:bg-black cursor-pointer m-4" />
+            </form>
+        </div>
+    </div>
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup() {
+            event.preventDefault();
+            popup.classList.add("open-popup");
+        }
+
+        function closePopup() {
+            event.preventDefault();
+            popup.classList.remove("open-popup");
+        }
+
+        function thankYou() {
+            document.getElementById("form").innerHTML = "Thank you";
+        }
+
+        window.addEventListener("DOMContentLoaded", function() { const yourForm = document.getElementById('form'); yourForm.addEventListener("submit", function(e) { e.preventDefault(); const data = new FormData(form); const action = e.target.action; fetch(action, { method: 'POST', body: data, }).then(() => { thankYou() }) }) });
+    </script>
 </body>
 </html>
