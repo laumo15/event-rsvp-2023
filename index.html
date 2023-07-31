@@ -42,7 +42,7 @@
         </div>
         <div class="flex box-content justify-center text-center md:px-6 md:pt-6 vlgnzhj h1ytodwq">
             <a class="border uppercase px-6 py-4 tracked-medium text-white bg-lapel border-lapel hover:bg-black cursor-pointer m-4" tag="button" href="/" onclick="openFormPopup()">Will attend</a>
-            <a class="border uppercase px-6 py-4 tracked-medium text-white bg-lapel border-lapel hover:bg-black cursor-pointer m-4" tag="button" href="/">Will not attend</a>
+            <a class="border uppercase px-6 py-4 tracked-medium text-white bg-lapel border-lapel hover:bg-black cursor-pointer m-4" tag="button" href="/" onclick="openRejectPopup()">Will not attend</a>
         </div>
     </div>
     <div class="max-w-screen-2xl mx-auto overflow-hidden relative text-lapel"><br><br><br></div>
@@ -99,12 +99,25 @@
                 </svg>
             </div>
             <div class="flex flex-col">
-                            <h2 class="text-center px-6 pt-10 pb-4 heading-serif-small md:heading-serif-medium lg:heading-serif-large xl:heading-serif-xlarge 2xl:heading-serif-xxlarge">Thank you!</h2>
+                <h2 class="text-center px-6 pt-10 pb-4 heading-serif-small md:heading-serif-medium lg:heading-serif-large xl:heading-serif-xlarge 2xl:heading-serif-xxlarge">Thank you!</h2>
             </div>
         </div>
+        <div id="reject-popup" aria-modal="true" role="dialog" tabindex="-1" aria-label="RSVP Modal" class="reject-popup m1809ice w-full bg-white mx-auto md:mt-16 pt-14 md:mb-4 px-4 pb-12 md:px-16 fixed inset-0" data-reach-dialog-content="" style="max-width: 600px">
+            <div class="flex justify-end absolute w-full px-4 pt-4 top-0 left-0 right-0">
+                <svg class="closer" onclick="closeRejectPopup()" height="2rem" viewBox="0 0 24 24" width="2rem" xmlns="http://www.w3.org/2000/svg">
+                    <title>Close icon</title>
+                    <path d="M4 20L20 4M4 4l16 16" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                <h2 class="text-center px-6 pt-10 pb-4 heading-serif-small md:heading-serif-medium lg:heading-serif-large xl:heading-serif-xlarge 2xl:heading-serif-xxlarge">We're sorry you cannot make it!</h2>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
     <script>
         let formPopup = document.getElementById("form-popup");
         let thankyouPopup = document.getElementById("thankyou-popup");
+        let rejectPopup = document.getElementById("reject-popup");
 
         function openFormPopup() {
             event.preventDefault();
@@ -129,6 +142,16 @@
         function thankYou() {
             formPopup.classList.remove("open-popup");
             thankyouPopup.classList.add("open-popup");
+        }
+
+        function openRejectPopup() {
+            event.preventDefault();
+            rejectPopup.classList.add("open-popup");
+        }
+
+        function closeRejectPopup() {
+            event.preventDefault();
+            rejectPopup.classList.remove("open-popup");
         }
 
         window.addEventListener("DOMContentLoaded", function() { const yourForm = document.getElementById('form'); yourForm.addEventListener("submit", function(e) { e.preventDefault(); const data = new FormData(form); const action = e.target.action; fetch(action, { method: 'POST', body: data, }).then(() => { thankYou() }) }) });

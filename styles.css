@@ -139,7 +139,16 @@
     transform: translate(-50% -50%) scale(0.1);
 }
 
+.reject-popup {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    visibility: hidden;
+    transform: translate(-50% -50%) scale(0.1);
+}
+
 .open-popup {
+    transition: ease-in-out 300ms;
     visibility: visible;
     top: 50%;
     transform: translate(-50% -50%) scale(1);
