@@ -27,9 +27,9 @@
                         <a class="uppercase border-b pb-0.25 tracked-medium text-pink border-white hover:text-dove hover:border-dove cursor-pointer md:inline-block my-3" href="https://goo.gl/maps/eXxtxc8xsFEvtjJS9" target="_blank">Get directions</a>
                     </div>
                     <div>
-                        <h2 class="uppercase heading-xxsmall">Host</h2>
+                        <h2 class="uppercase heading-xxsmall">Hosts</h2>
                         <h3 class="heading-small my-2 md:my4 md:heading-small text-magenta"></br>Elana and Daniel Lowy</h3>
-                        <h2 class="heading-xsmall md:heading-xsmall"></h2>
+                        <h2 class="heading-xsmall md:heading-xsmall"><br></h2>
                         <a class="uppercase border-b pb-0.25 tracked-medium text-pink border-white hover:text-dove hover:border-dove cursor-pointer md:inline-block my-3" href="/cards/category/summer-entertaining-invitations">Send a message</a>
                     </div>
                 </div>
@@ -91,8 +91,20 @@
                 <input type="submit" value="Confirm" class="border uppercase px-6 py-4 tracked-medium text-white bg-lapel border-lapel hover:bg-black cursor-pointer m-4" />
             </form>
         </div>
+        <div id="thankyou-popup" aria-modal="true" role="dialog" tabindex="-1" aria-label="RSVP Modal" class="thankyou-popup m1809ice w-full bg-white mx-auto md:mt-16 pt-14 md:mb-4 px-4 pb-12 md:px-16 fixed inset-0" data-reach-dialog-content="" style="max-width: 600px">
+            <div class="flex justify-end absolute w-full px-4 pt-4 top-0 left-0 right-0">
+                <svg class="closer" onclick="closeThankyouPopup()" height="2rem" viewBox="0 0 24 24" width="2rem" xmlns="http://www.w3.org/2000/svg">
+                    <title>Close icon</title>
+                    <path d="M4 20L20 4M4 4l16 16" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                            <h2 class="text-center px-6 pt-10 pb-4 heading-serif-small md:heading-serif-medium lg:heading-serif-large xl:heading-serif-xlarge 2xl:heading-serif-xxlarge">Thank you!</h2>
+            </div>
+        </div>
     <script>
         let formPopup = document.getElementById("form-popup");
+        let thankyouPopup = document.getElementById("thankyou-popup");
 
         function openFormPopup() {
             event.preventDefault();
@@ -104,8 +116,19 @@
             formPopup.classList.remove("open-popup");
         }
 
+        function openThankyouPopup() {
+            event.preventDefault();
+            thankyouPopup.classList.add("open-popup");
+        }
+
+        function closeThankyouPopup() {
+            event.preventDefault();
+            thankyouPopup.classList.remove("open-popup");
+        }
+
         function thankYou() {
-            document.getElementById("form").innerHTML = "Thank you";
+            formPopup.classList.remove("open-popup");
+            thankyouPopup.classList.add("open-popup");
         }
 
         window.addEventListener("DOMContentLoaded", function() { const yourForm = document.getElementById('form'); yourForm.addEventListener("submit", function(e) { e.preventDefault(); const data = new FormData(form); const action = e.target.action; fetch(action, { method: 'POST', body: data, }).then(() => { thankYou() }) }) });

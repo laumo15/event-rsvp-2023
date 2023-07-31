@@ -131,6 +131,14 @@
     transform: translate(-50% -50%) scale(0.1);
 }
 
+.thankyou-popup {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    visibility: hidden;
+    transform: translate(-50% -50%) scale(0.1);
+}
+
 .open-popup {
     visibility: visible;
     top: 50%;
