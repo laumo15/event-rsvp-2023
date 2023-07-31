@@ -18,7 +18,7 @@
                         <h2 class="uppercase heading-xxsmall">Date</h2>
                         <h3 class="heading-small my-2 md:my4 md:heading-small text-magenta">Sunday</br>October . 15 . 2023</h3>
                         <h2 class="heading-xsmall md:heading-xsmall">4:00 PM</h2>
-                        <a class="uppercase border-b pb-0.25 tracked-medium text-pink border-white hover:text-dove hover:border-dove cursor-pointer md:inline-block my-3" href="/cards/category/summer-entertaining-invitations">Add to calendar</a>
+                        <a class="uppercase border-b pb-0.25 tracked-medium text-pink border-white hover:text-dove hover:border-dove cursor-pointer md:inline-block my-3" href="#" onclick="openCalendarPopup()">Add to calendar</a>
                     </div>
                     <div>
                         <h2 class="uppercase heading-xxsmall">Address</h2>
@@ -30,7 +30,7 @@
                         <h2 class="uppercase heading-xxsmall">Hosts</h2>
                         <h3 class="heading-small my-2 md:my4 md:heading-small text-magenta"></br>Elana and Daniel Lowy</h3>
                         <h2 class="heading-xsmall md:heading-xsmall"><br></h2>
-                        <a class="uppercase border-b pb-0.25 tracked-medium text-pink border-white hover:text-dove hover:border-dove cursor-pointer md:inline-block my-3" href="/cards/category/summer-entertaining-invitations">Send a message</a>
+                        <a class="uppercase border-b pb-0.25 tracked-medium text-pink border-white hover:text-dove hover:border-dove cursor-pointer md:inline-block my-3" href="#">Send a message</a>
                     </div>
                 </div>
             </div>
@@ -113,11 +113,40 @@
                 <h2 class="text-center px-6 pt-10 pb-4 heading-serif-small md:heading-serif-medium lg:heading-serif-large xl:heading-serif-xlarge 2xl:heading-serif-xxlarge">We're sorry you cannot make it!</h2>
             </div>
         </div>
+        <div id="calendar-popup" aria-modal="true" role="dialog" tabindex="-1" aria-label="RSVP Modal" class="calendar-popup m1809ice w-full bg-white mx-auto md:mt-16 pt-14 md:mb-4 px-4 pb-12 md:px-16 fixed inset-0" data-reach-dialog-content="" style="max-width: 600px">
+            <div class="flex justify-end absolute w-full px-4 pt-4 top-0 left-0 right-0">
+                <svg class="closer" onclick="closeCalendarPopup()" height="2rem" viewBox="0 0 24 24" width="2rem" xmlns="http://www.w3.org/2000/svg">
+                    <title>Close icon</title>
+                    <path d="M4 20L20 4M4 4l16 16" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <div class="flex flex-col content-center">
+                <h4 class="text-center px-6 pt-10 pb-4 heading-serif-small md:heading-serif-medium lg:heading-serif-large xl:heading-serif-xlarge 2xl:heading-serif-xxlarge">Choose your calendar</br></br></br></h4>
+                <div class="flex justify-center">
+                <add-to-calendar-button
+                    name="Channa's Bat Mitzvah"
+                    startDate="2023-10-15"
+                    startTime="16:00"
+                    endTime="23:00"
+                    timeZone="America/New_York"
+                    location="Weylin, 175 Broadway, Brooklyn, New York"
+                    description="With gratitude to Hashem we invite you to join us as we celebrate the Bat Mitzvah of our daughter Channa"
+                    options="'Apple','Google','iCal','Outlook.com','Yahoo'"
+                    buttonsList
+                    hideTextLabelButton
+                    buttonStyle="round"
+                    lightMode="bodyScheme"
+                    >
+                </add-to-calendar-button>
+                </div>
+            </div>
+        </div>
     <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
     <script>
         let formPopup = document.getElementById("form-popup");
         let thankyouPopup = document.getElementById("thankyou-popup");
         let rejectPopup = document.getElementById("reject-popup");
+        let calendarPopup = document.getElementById("calendar-popup");
 
         function openFormPopup() {
             event.preventDefault();
@@ -152,6 +181,16 @@
         function closeRejectPopup() {
             event.preventDefault();
             rejectPopup.classList.remove("open-popup");
+        }
+
+        function openCalendarPopup() {
+            event.preventDefault();
+            calendarPopup.classList.add("open-popup");
+        }
+
+        function closeCalendarPopup() {
+            event.preventDefault();
+            calendarPopup.classList.remove("open-popup");
         }
 
         window.addEventListener("DOMContentLoaded", function() { const yourForm = document.getElementById('form'); yourForm.addEventListener("submit", function(e) { e.preventDefault(); const data = new FormData(form); const action = e.target.action; fetch(action, { method: 'POST', body: data, }).then(() => { thankYou() }) }) });
