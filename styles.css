@@ -127,6 +127,20 @@
     background-color: #ff689d;
 }
 
+.space-preserve {
+    white-space: pre-wrap;
+}
+
+.w-100 {
+    width: 100%;
+    display: inline-block;
+}
+
+.w-60 {
+    width: 60%;
+    display: inline-block;
+}
+
 .form-popup {
     position: absolute;
     top: 0;
@@ -1432,6 +1446,11 @@ img.autocomplete-suggestion-image-element {
 .mx-8 {
     margin-left: 2rem;
     margin-right: 2rem
+}
+
+.mx-16 {
+    margin-left: 4rem;
+    margin-right: 4rem
 }
 
 .mx-\[10\%\] {
