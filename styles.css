@@ -691,9 +691,6 @@ input[type=checkbox]:checked,input[type=checkbox]:checked:focus,input[type=check
     z-index: 20
 }
 
-.container {
-    width: 100%
-}
 
 @media (min-width: 600px) {
     .container {
