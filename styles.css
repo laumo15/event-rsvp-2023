@@ -123,8 +123,22 @@
     color: #ff689d;
 }
 
+.text-bold {
+    font-weight: bold;
+}
+
 .btn-pink {
     background-color: #ff689d;
+}
+
+.btn-rose {
+    background-image: url(src/button-background-8.png);
+}
+
+.btn-rose:hover {
+    background-image: none;
+    background-color: #ff689d;
+    color: white
 }
 
 .space-preserve {
