@@ -132,7 +132,8 @@
 }
 
 .btn-rose {
-    background-image: url(src/button-background-8.png);
+    background-image: url(src/button-background-9.png);
+    background-position-y: center;
 }
 
 .btn-rose:hover {
