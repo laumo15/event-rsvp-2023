@@ -156,6 +156,10 @@
     display: inline-block;
 }
 
+.visibility-inherit {
+    visibility: inherit !important;
+}
+
 .form-popup {
     position: absolute;
     top: 0;
