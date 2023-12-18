@@ -245,7 +245,8 @@
                 const data = new FormData(form);
                 console.log(data);
                 const action = e.target.action;
-                fetch(action, { method: 'POST', body: data, }).then(() => { thankYou() }) }) });
+                fetch(action, { method: 'POST', body: data, })
+                thankYou(); }) });
         
         window.addEventListener("DOMContentLoaded", function decline () {
             const yourDeclineForm = document.getElementById('declineform');
@@ -254,7 +255,8 @@
                 const data = new FormData(declineform);
                 console.log(data);
                 const action = e.target.action;
-                fetch(action, { method: 'POST', body: data, }).then(() => { sorry() }) }) });
+                fetch(action, { method: 'POST', body: data, });
+                sorry(); }) });                
     </script>
 </body>
 </html>
